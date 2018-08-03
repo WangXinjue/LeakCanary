@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ff000000"
+    android:paddingTop="20dp">
+    <TextView
+        android:id="@+id/pkg_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffffff"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+        1.AndroidUtil是一个单利模式，它的生命周期，基本跟进程是一样的\n
+        2.AndroidUtil持有了一个Activity的引用，那么在进程结束前，Activity是不会被回收\n
+        3.这里是人为制造的内存泄漏，退出这个Activity，或者横竖屏切换一次，就可以造成泄漏\n
+        4.AndroidUtil只有第一次初始化时候，会持有一个Activity\n
+        5.只有第一个Activity在ondestory之后释放不掉\n
+        6.反复进入这个Activity，不会导致内存反复的增加"
+        android:textColor="#ffffffff"/>
+
+</LinearLayout>

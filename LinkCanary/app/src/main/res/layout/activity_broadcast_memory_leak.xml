@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.linkcanary.xinjuewang.leakcanary.LoaclVariableMemoryLeak.LoaclVariableMemoryLeakActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\n
+        讨论这种情况，\n
+        一个对象obj的局部变量var，被静态对象static长期持有，\n
+        这种情况正常不会导致obj释放不掉，\n
+        但是var是不会释放的,\n
+        这里情况比较特殊：
+        obj，是一个Activity类型，
+        var，是一个button类型，它在初始化的时候，是需要一个mContext的参数，\n
+        这个mContext参数，恰巧就是当前这个Activity，\n
+        所以，导致了这个Activity的内存泄漏\n"/>
+
+    <Button
+        android:id="@+id/test_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

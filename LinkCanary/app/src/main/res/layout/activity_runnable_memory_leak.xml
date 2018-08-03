@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearlayout">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\n
+        这个View要post一个runnable,到mainloop里面,\n
+        同时，delay了9999999秒,\n
+        所以，在执行之前，runnable一直都被Loop持有,\n
+        由于runnable是一个匿名的内部类持有一个外部类的引用\n
+        所以这个Activity是不会释放的"/>
+
+</LinearLayout>
